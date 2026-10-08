@@ -2,6 +2,11 @@
 
 Agente de suporte N1 que responde sobre a base interna de soluções e **abre chamado sozinho quando não resolve**.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/fluxo-rag-dark.png">
+  <img src="./assets/fluxo-rag-light.png" alt="Fluxo: a pergunta chega pelo chat e a busca encontra artigos na base. Abaixo do limiar de similaridade, abre chamado direto. Acima, entrega uma solução por vez; se resolveu, fecha; se não, tenta a próxima até a terceira tentativa e então abre chamado com o histórico." width="100%">
+</picture>
+
 > Reimplementação pública de um sistema que mantenho em produção. A base aqui é sintética: 12 artigos de suporte escritos para o exemplo.
 
 ## O problema
@@ -11,8 +16,8 @@ A equipe de TI responde os mesmos vinte problemas o dia inteiro. Pior que o temp
 ## Rodando
 
 ```bash
-python3 agente.py --demo     # três casos: resolve, escala, e se recusa a responder
-python3 agente.py            # interativo
+python3 agente.py --demo   # três casos: resolve, escala, e se recusa a responder
+python3 agente.py          # interativo
 ```
 
 Só stdlib. Sem chave de API, sem Docker, sem instalar nada.
